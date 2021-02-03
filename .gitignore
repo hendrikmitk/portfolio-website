@@ -1,0 +1,17 @@
+# sass utilities
+.sass-cache/
+*.sass.map
+*.scss.map
+
+# node_modules
+node_modules
+
+# .prettierignore and .cache
+.prettierignore
+.cache
+
+# dotenv file
+.env
+
+# macOS resources
+.DS_Store

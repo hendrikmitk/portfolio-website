@@ -1,0 +1,21 @@
+/* Coming soon section */
+
+main {
+	height: 100vh;
+	.coming-soon {
+		background-color: $corbeau;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		h1 {
+			font-weight: 400;
+			font-size: 4.2rem;
+			line-height: 6.2rem;
+			color: $ice-ice-baby;
+		}
+	}
+	&:after {
+		@include rectangle-top-left('rgb(3, 3, 30)', 14vw, 0);
+	}
+}

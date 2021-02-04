@@ -1,21 +1,129 @@
-/* Coming soon section */
+/* Fullpage settings */
 
-main {
-	height: 100vh;
-	.coming-soon {
-		background-color: $corbeau;
-		height: 100%;
+body {
+	height: 400vh;
+	background-color: $corbeau;
+}
+
+/* Nav header */
+
+header {
+	min-height: 10vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: sticky;
+	top: 0%;
+	z-index: 1;
+	padding: 0 10%; // Increase value to ~18% for larger Screens
+	#navbar {
+		width: 100%;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		h1 {
-			font-weight: 400;
-			font-size: 4.2rem;
-			line-height: 6.2rem;
-			color: $ice-ice-baby;
+		#navbar-logo {
+			position: relative;
+			h1 {
+				font-size: 4.2rem;
+				line-height: 6.4rem;
+			}
+			#first-h {
+				font-weight: 400;
+				color: $ice-ice-baby;
+			}
+			#second-h {
+				color: $tristesse;
+				position: absolute;
+				font-weight: 600;
+				left: 0.5rem;
+				top: 0%;
+			}
+		}
+		#navbar-links {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.navbar-link {
+				list-style: none;
+				#navbar-follow {
+					margin: 0 6rem;
+				}
+				a {
+					font-style: normal;
+					font-weight: 300;
+					font-size: 1.4rem;
+					line-height: 2.1rem;
+					color: $white;
+					&:hover {
+						color: $ice-ice-baby;
+					}
+				}
+			}
 		}
 	}
-	&:after {
-		@include rectangle-top-left('rgb(3, 3, 30)', 14vw, 0);
+}
+
+/* Background settings */
+
+.hero {
+	height: 90vh;
+	background-color: $corbeau;
+}
+
+.about {
+	height: 100vh;
+	background-color: $tristesse;
+	position: relative;
+	&::before {
+		@include navbar-spacer($corbeau, 10vh);
+	}
+	&::after {
+		@include rectangle-top-left('rgb(5, 5, 35)', 12vw, 10vh);
 	}
 }
+
+.follow {
+	height: 100vh;
+	// background-color: $corbeau;
+	position: relative;
+	&::before {
+		@include navbar-spacer($tristesse, 10vh);
+	}
+	&::after {
+		@include rectangle-top-right('rgb(3, 3, 30)', 12vw, 10vh);
+	}
+}
+
+.contact {
+	height: 100vh;
+	background-color: $tristesse;
+	position: relative;
+	&::before {
+		@include navbar-spacer($corbeau, 10vh);
+	}
+	&::after {
+		@include rectangle-top-left('rgb(5, 5, 35)', 12vw, 10vh);
+	}
+}
+
+/* Coming soon section */
+
+// main {
+// 	height: 100vh;
+// 	.coming-soon {
+// 		background-color: $corbeau;
+// 		height: 100%;
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+// 		h1 {
+// 			font-weight: 400;
+// 			font-size: 4.2rem;
+// 			line-height: 6.2rem;
+// 			color: $ice-ice-baby;
+// 		}
+// 	}
+// 	&:after {
+// 		@include rectangle-top-left('rgb(3, 3, 30)', 14vw, 0);
+// 	}
+// }

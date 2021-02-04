@@ -1,8 +1,7 @@
-/* Background rectangles */
+/* Background rectangles and navbar spacer */
 
 @mixin rectangle-top-left($color, $height, $top-value) {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='#{$color}' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 100,100 100,0' /%3E%3C/svg%3E");
-	background-color: $color;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -15,7 +14,6 @@
 
 @mixin rectangle-top-right($color, $height, $top-value) {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='#{$color}' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 0,100 100,0' /%3E%3C/svg%3E");
-	background-color: $color;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -24,4 +22,13 @@
 	width: 100%;
 	position: absolute;
 	top: $top-value;
+}
+
+@mixin navbar-spacer($color, $height) {
+	background-color: $color;
+	height: $height;
+	position: relative;
+	content: '';
+	width: 100%;
+	position: absolute;
 }

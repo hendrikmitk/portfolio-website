@@ -6,6 +6,26 @@ $mountain-haze: rgb(107, 107, 128);
 $corbeau: rgb(5, 5, 35);
 $tristesse: rgb(3, 3, 30);
 
+/* Keyframes */
+
+@keyframes blink {
+	.80% {
+		background-color: $white;
+	}
+	49% {
+		background-color: $white;
+	}
+	50% {
+		background-color: transparent;
+	}
+	99% {
+		background-color: transparent;
+	}
+	100% {
+		background-color: $white;
+	}
+}
+
 /* Global styling */
 
 html {

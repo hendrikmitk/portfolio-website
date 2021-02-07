@@ -1,4 +1,68 @@
+/* Nav header */
+
+header {
+	min-height: 10vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: sticky;
+	top: 0%;
+	z-index: 10;
+	padding: 0 10%; // Increase to ~18% for larger Screens
+	#navbar {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		#navbar-logo {
+			position: relative;
+			h1 {
+				font-size: 4.2rem;
+				line-height: 6.4rem;
+			}
+			#first-h {
+				font-weight: 400;
+				color: $ice-ice-baby;
+			}
+			#second-h {
+				color: $tristesse;
+				position: absolute;
+				font-weight: 600;
+				left: 0.5rem;
+				top: 0%;
+			}
+		}
+		#navbar-links {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.navbar-link {
+				list-style: none;
+				#navbar-follow {
+					margin: 0 6rem;
+				}
+				a {
+					font-style: normal;
+					font-weight: 300;
+					font-size: 1.4rem;
+					line-height: 2.1rem;
+					color: $white;
+					&:hover {
+						color: $ice-ice-baby;
+					}
+				}
+			}
+		}
+	}
+}
+
 /* Background rectangles and navbar spacer */
+
+@mixin next-section($color) {
+	height: 100vh;
+	background-color: $color;
+	position: relative;
+}
 
 @mixin rectangle-top-left($color, $height, $top-value) {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='#{$color}' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 100,100 100,0' /%3E%3C/svg%3E");

@@ -1,35 +1,20 @@
 /* Color variables */
 
+$benthic-black: rgb(2, 2, 20);
+$hadopelagic-water: rgb(5, 5, 35);
 $white: rgb(255, 255, 255);
 $ice-ice-baby: rgb(10, 253, 216);
-$mountain-haze: rgb(107, 107, 128);
-$corbeau: rgb(5, 5, 35);
-$tristesse: rgb(3, 3, 30);
+$mountain-haze: rgb(107, 107, 128); // Only used <About> tags etc
 
-/* Keyframes */
+/* Layout variables */
 
-@keyframes blink {
-	.80% {
-		background-color: $white;
-	}
-	49% {
-		background-color: $white;
-	}
-	50% {
-		background-color: transparent;
-	}
-	99% {
-		background-color: transparent;
-	}
-	100% {
-		background-color: $white;
-	}
-}
+$global-margin: 12%; // Increase to ~18% for larger Screens
 
 /* Global styling */
 
 html {
 	font-size: 62.5%;
+	font-style: normal;
 	font-family: 'Prompt', sans-serif;
 	cursor: url('../img/cursor.png'), auto;
 	* {
@@ -52,5 +37,25 @@ html {
 			cursor: pointer;
 			outline-style: none;
 		}
+	}
+}
+
+/* Keyframes */
+
+@keyframes blink {
+	.80% {
+		background-color: $white;
+	}
+	49% {
+		background-color: $white;
+	}
+	50% {
+		background-color: transparent;
+	}
+	99% {
+		background-color: transparent;
+	}
+	100% {
+		background-color: $white;
 	}
 }

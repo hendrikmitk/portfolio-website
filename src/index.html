@@ -14,43 +14,40 @@
 <body>
 
     <header>
-        <nav id="navbar">
-            <a id="navbar-logo" href="#">
-                <h1 id="first-h">H</h1>
-                <h1 id="second-h">H</h1>
+        <nav>
+            <a id="navbar-logo">
+                <h1 id="h-1">H</h1>
+                <h1 id="h-2">H</h1>
             </a>
-            <ul id="navbar-links">
-                <li class="navbar-link"><a id="navbar-about" href="#about">About</a></li>
-                <li class="navbar-link"><a id="navbar-follow" href="#follow">Follow me</a></li>
-                <li class="navbar-link"><a id="navbar-contact" href="#contact">Say hello</a></li>
+            <ul>
+                <li><a id="navbar-about">About</a></li>
+                <li><a id="navbar-follow">Follow me</a></li>
+                <li><a id="navbar-contact">Say hello</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-
-        <!-- Background elements -->
-        <div class="hero"></div>
-        <div id="about" class="about"></div>
-        <div id="follow" class="follow"></div>
-        <div id="contact" class="contact"></div>
-
-        <!-- Content elements -->
-        <div id="main-wrapper">
-            <section id="hero-wrapper">
+    <main class="snap-wrapper">
+        <section id="hero" class="snap-box">
+            <div class="poly"></div>
+            <div id="hero-wrapper" class="content">
                 <div id="hero-text">
                     <h3>Hi. My name is Hendrik.</br>I am a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h3>
                     <h4>Want to know me better? Start scrolling or, if</br>you just want to say hello, drop me a message.</h4>
                 </div>
-            </section>
-            <section id="about-wrapper">
-                <p class="tag">&lt;About&gt;</About>
-                <p id="about-text">My name is Hendrik Harlichs, I am 32 years old and live in Hamburg. My first and for a long time only encounter with software development was when I participated in an HTML workgroup at school in 8th grade. That was in 2002.</br>Since then, I have learned how to fix cars, got my technical college degree, taught CMS training in Sweden and South Korea, and eventually became a project manager in software development which, on a side note, landed me aboard empty cruise ships.</br></br>Solving concrete problems and immersing myself in technical contexts has always given me much more joy than the usual activities of a project manager. In 2020, I decided to turn passion into profession.</br></br>I soon will complete the full-stack web development program at Hamburg Coding School and am currently looking for my first position as a frontend or full-stack developer in Hamburg or remote.</br></br>You have or know about such a position? Drop me a line.
-                </p>
-                <p class="tag">&lt;/About&gt;</About>
-                </p>
-            </section>
-            <section id="follow-wrapper">
+            </div>
+        </section>
+        <section id="about" class="snap-box">
+            <div class="poly"></div>
+            <div id="about-wrapper" class="content">
+                <p class="tag">&lt;About&gt;</p>
+                <p id="about-text">My name is Hendrik Harlichs, I am 32 years old and live in Hamburg. My first and for a long time only encounter with software development was when I participated in an HTML workgroup at school in 8th grade. That was in 2002.</br></br>Since then, I have learned how to fix cars, got my technical college degree, taught CMS training in Sweden and South Korea, and eventually became a project manager in software development which, on a side note, landed me aboard empty cruise ships.</br></br>Solving concrete problems and immersing myself in technical contexts has always given me much more joy than the usual activities of a project manager. In 2020, I decided to turn passion into profession.</br></br>I soon will complete the full-stack web development program at Hamburg Coding School and am currently looking for my first position as a frontend or full-stack developer in Hamburg or remote.</br></br>You have or know about such a position? Drop me a line.</p>
+                <p class="tag">&lt;/About&gt;</p>
+            </div>
+        </section>
+        <section id="follow" class="snap-box">
+            <div class="poly"></div>
+            <div id="follow-wrapper" class="content">
                 <p class="tag">&lt;Follow me&gt;</p>
                 <div id="social-container">
                     <ul>
@@ -62,17 +59,19 @@
                     </ul>
                 </div>
                 <p class="tag">&lt;/Follow me&gt;</p>
-            </section>
-            <section id="contact-wrapper">
+            </div>
+        </section>
+        <section id="contact" class="snap-box">
+            <div class="poly"></div>
+            <div id="contact-wrapper" class="content">
                 <p class="tag">&lt;Say hello&gt;</p>
                 <div id="email">
-                    <div id="line"></div>
+                    <!-- <div id="line"></div> -->
                     <a href="mailto:hi@hendrikharlichs.de">hi@hendrikharlichs.de</a>
                 </div>
                 <p class="tag">&lt;/Say hello&gt;</p>
-            </section>
-        </div>
-
+            </div>
+        </section>
     </main>
 
 </body>

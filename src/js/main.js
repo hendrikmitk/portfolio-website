@@ -1,13 +1,21 @@
+/////////////////
+// I M P O R T //
+/////////////////
+
 import jump from 'jump.js';
 
-/////////////
-// D A T A //
-/////////////
+/////////////////
+// S E L E C T //
+/////////////////
 
 const logo = document.querySelector('#navbar-logo');
 const about = document.querySelector('#navbar-about');
 const follow = document.querySelector('#navbar-follow');
 const contact = document.querySelector('#navbar-contact');
+
+/////////////////
+// D E F I N E //
+/////////////////
 
 const typedTextSpan = document.querySelector('.typed-text');
 const cursorSpan = document.querySelector('.cursor');
@@ -27,9 +35,9 @@ const newTextOffset = 400; // Offset before nth start
 let textArrayIndex = 0;
 let charIndex = 0;
 
-/////////////
-// H E L P //
-/////////////
+/////////////////
+// H E L P E R //
+/////////////////
 
 const jumpToSection = target => {
 	jump(target, {
@@ -63,9 +71,9 @@ const erase = () => {
 	}
 };
 
-/////////////
-// H E A R //
-/////////////
+/////////////////
+// L I S T E N //
+/////////////////
 
 document.addEventListener('DOMContentLoaded', () => {
 	if (textArray.length) setTimeout(type, initialOffset);

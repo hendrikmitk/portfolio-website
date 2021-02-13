@@ -2,16 +2,14 @@
 // I M P O R T //
 /////////////////
 
-import jump from 'jump.js';
+import smoothscroll from 'smoothscroll-polyfill';
+
+smoothscroll.polyfill();
+window.__forceSmoothScrollPolyfill__ = true;
 
 /////////////////
 // S E L E C T //
 /////////////////
-
-const logo = document.querySelector('#navbar-logo');
-const about = document.querySelector('#navbar-about');
-const follow = document.querySelector('#navbar-follow');
-const contact = document.querySelector('#navbar-contact');
 
 /////////////////
 // D E F I N E //
@@ -38,12 +36,6 @@ let charIndex = 0;
 /////////////////
 // H E L P E R //
 /////////////////
-
-const jumpToSection = target => {
-	jump(target, {
-		duration: distance => Math.abs(distance) * 0.6,
-	});
-};
 
 const type = () => {
 	if (charIndex < textArray[textArrayIndex].length) {
@@ -79,18 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (textArray.length) setTimeout(type, initialOffset);
 });
 
-logo.addEventListener('click', () => {
-	jumpToSection('body');
-});
-
-about.addEventListener('click', () => {
-	jumpToSection('#about');
-});
-
-follow.addEventListener('click', () => {
-	jumpToSection('#follow');
-});
-
-contact.addEventListener('click', () => {
-	jumpToSection('#contact');
+document.addEventListener('click', event => {
+	if (!event.target.matches('.nav-scroll')) return;
+	event.preventDefault();
+	let element = document.getElementById(event.target.dataset.target);
+	element.scrollIntoView({ behavior: 'smooth' });
 });

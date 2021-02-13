@@ -11,12 +11,18 @@ window.__forceSmoothScrollPolyfill__ = true;
 // S E L E C T //
 /////////////////
 
+// Typing effect
+const typedTextSpan = document.querySelector('.typed-text');
+const cursorSpan = document.querySelector('.cursor');
+
+// IntersectionObserver
+const sections = document.querySelectorAll('section');
+
 /////////////////
 // D E F I N E //
 /////////////////
 
-const typedTextSpan = document.querySelector('.typed-text');
-const cursorSpan = document.querySelector('.cursor');
+// Typing effect
 const textArray = [
 	'Node.js wizard',
 	'CSS artist',
@@ -33,10 +39,17 @@ const newTextOffset = 400; // Offset before nth start
 let textArrayIndex = 0;
 let charIndex = 0;
 
+// IntersectionObserver
+const options = {
+	rootMargin: '-40%',
+};
+let timeouts = {};
+
 /////////////////
 // H E L P E R //
 /////////////////
 
+// Typing effect
 const type = () => {
 	if (charIndex < textArray[textArrayIndex].length) {
 		if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
@@ -63,14 +76,34 @@ const erase = () => {
 	}
 };
 
+// IntersectionObserver
+const io = new IntersectionObserver(entries => {
+	for (const entry of entries) {
+		let navItem = document.getElementById(`navbar-${entry.target.id}`);
+		if (entry.isIntersecting) {
+			timeouts[entry.target.id] = setTimeout(() => {
+				navItem.classList.add('active'); // Add .active class to nav item
+			}, 180); // Delay
+		} else {
+			clearTimeout(timeouts[entry.target.id]);
+			navItem.classList.remove('active'); // Remove .active from nav item
+			return;
+		}
+	}
+}, options);
+
+sections.forEach(section => io.observe(section));
+
 /////////////////
 // L I S T E N //
 /////////////////
 
+// Typing effect
 document.addEventListener('DOMContentLoaded', () => {
 	if (textArray.length) setTimeout(type, initialOffset);
 });
 
+// Smooth scrolling
 document.addEventListener('click', event => {
 	if (!event.target.matches('.nav-scroll')) return;
 	event.preventDefault();

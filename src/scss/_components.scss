@@ -1,5 +1,12 @@
 /* Nav header */
 
+nav ul .active {
+	text-decoration-color: $ice-ice-baby;
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+	text-decoration-thickness: 0.4rem;
+}
+
 header {
 	// background: rgba(255, 72, 72, 0.5);
 	width: 100%;
@@ -17,7 +24,7 @@ header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		#navbar-logo {
+		#navbar-hero {
 			position: relative;
 			h1 {
 				font-size: 4.2rem;

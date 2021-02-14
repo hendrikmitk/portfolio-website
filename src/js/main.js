@@ -44,6 +44,7 @@ const options = {
 	rootMargin: '-40%',
 };
 let timeouts = {};
+const delay = 160;
 
 /////////////////
 // H E L P E R //
@@ -83,7 +84,7 @@ const io = new IntersectionObserver(entries => {
 		if (entry.isIntersecting) {
 			timeouts[entry.target.id] = setTimeout(() => {
 				navItem.classList.add('active'); // Add .active class to nav item
-			}, 180); // Delay
+			}, delay);
 		} else {
 			clearTimeout(timeouts[entry.target.id]);
 			navItem.classList.remove('active'); // Remove .active from nav item

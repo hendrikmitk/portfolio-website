@@ -18,6 +18,9 @@ const cursorSpan = document.querySelector('.cursor');
 // IntersectionObserver
 const sections = document.querySelectorAll('section');
 
+// Calculate age
+const ageSpan = document.querySelector('#age');
+
 /////////////////
 // D E F I N E //
 /////////////////
@@ -45,6 +48,9 @@ const options = {
 };
 let timeouts = {};
 const delay = 160;
+
+// Calculate age
+const dob = new Date('1988/03/19');
 
 /////////////////
 // H E L P E R //
@@ -95,6 +101,14 @@ const io = new IntersectionObserver(entries => {
 
 sections.forEach(section => io.observe(section));
 
+// Calculate age
+const calculateAge = () => {
+	const today = new Date();
+	const diff = today - dob;
+	const age = Math.floor(diff / (365.25 * 24 * 60 * 60 * 1000));
+	return age;
+};
+
 /////////////////
 // L I S T E N //
 /////////////////
@@ -102,6 +116,11 @@ sections.forEach(section => io.observe(section));
 // Typing effect
 document.addEventListener('DOMContentLoaded', () => {
 	if (textArray.length) setTimeout(type, initialOffset);
+});
+
+// Calculate age
+document.addEventListener('DOMContentLoaded', () => {
+	ageSpan.textContent = calculateAge();
 });
 
 // Smooth scrolling

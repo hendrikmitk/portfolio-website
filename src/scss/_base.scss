@@ -16,7 +16,7 @@ html {
 	font-size: 62.5%;
 	font-style: normal;
 	font-family: 'Prompt', sans-serif;
-	cursor: url('../img/cursor.png'), auto;
+	cursor: url('../img/cursor-outline.png'), auto;
 	* {
 		margin: 0;
 		padding: 0;
@@ -27,7 +27,7 @@ html {
 		a:active {
 			text-decoration: none;
 			outline: none;
-			cursor: url('../img/cursor.png'), auto;
+			cursor: url('../img/cursor-outline.png'), auto;
 		}
 		button,
 		button:focus,

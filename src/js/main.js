@@ -21,6 +21,9 @@ const sections = document.querySelectorAll('section');
 // Calculate age
 const ageSpan = document.querySelector('#age');
 
+// Contact links
+const contactLinks = document.querySelectorAll('.to-contact');
+
 /////////////////
 // D E F I N E //
 /////////////////
@@ -129,4 +132,12 @@ document.addEventListener('click', event => {
 	event.preventDefault();
 	let element = document.getElementById(event.target.dataset.target);
 	element.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Contact links
+contactLinks.forEach(link => {
+	link.addEventListener('click', () => {
+		let element = document.getElementById('contact');
+		element.scrollIntoView({ behavior: 'smooth' });
+	});
 });

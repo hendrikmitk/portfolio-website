@@ -73,6 +73,10 @@ section {
 			font-size: 1.6rem;
 			line-height: 2.2rem;
 		}
+		.to-contact {
+			position: relative;
+			@include underline-effect($ice-ice-baby, 0.3rem, -0.4rem, 0.3s);
+		}
 
 		/* Typing effect */
 		span.typed-text {
@@ -103,6 +107,10 @@ section {
 		line-height: 2.4rem;
 		color: $white;
 		columns: auto 2;
+		.to-contact {
+			position: relative;
+			@include underline-effect($ice-ice-baby, 0.3rem, -0.4rem, 0.3s);
+		}
 	}
 }
 
@@ -142,21 +150,6 @@ section {
 		font-weight: 300;
 		font-size: 4.2rem;
 		color: $white;
-		&::before {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 0.4rem;
-			bottom: 0.6rem;
-			left: 0;
-			background-color: $ice-ice-baby;
-			visibility: hidden;
-			transform: scaleX(0);
-			transition: all 0.3s ease-in-out 0s;
-		}
-		&:hover::before {
-			visibility: visible;
-			transform: scaleX(1);
-		}
+		@include underline-effect($ice-ice-baby, 0.4rem, 0.6rem, 0.3s);
 	}
 }

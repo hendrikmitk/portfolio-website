@@ -31,6 +31,17 @@ section {
 	}
 }
 
+/* Head shot image */
+
+#hero {
+	background: url(../img/head-shot.png), $hadopelagic-water;
+	background-attachment: fixed; // Or perhaps better 'scroll'?
+	background-position: right center;
+	background-size: 92% auto; // Decrease width for larger Screens
+	background-repeat: no-repeat;
+	background-blend-mode: lighten;
+}
+
 /* Content wrapper */
 
 .content {

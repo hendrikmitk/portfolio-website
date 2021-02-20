@@ -116,7 +116,7 @@ const circleWatch = new IntersectionObserver(entries => {
 		} else if (!entry.isIntersecting && entry.target.id === 'skills') {
 			// Remove all SVG child nodes from parents in 'Skills' section
 			skillWrapper.forEach(parent => {
-				parent.removeChild(parent.childNodes[2]);
+				parent.removeChild(parent.childNodes[1]);
 			});
 		} else {
 			return;

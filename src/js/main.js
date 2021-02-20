@@ -3,6 +3,7 @@
 /////////////////
 
 import smoothscroll from 'smoothscroll-polyfill';
+import ProgressBar from 'progressbar.js';
 
 smoothscroll.polyfill();
 window.__forceSmoothScrollPolyfill__ = true;
@@ -17,12 +18,16 @@ const cursorSpan = document.querySelector('.cursor');
 
 // IntersectionObserver
 const sections = document.querySelectorAll('section');
+const skillSection = document.getElementById('skills');
 
 // Calculate age
 const ageSpan = document.querySelector('#age');
 
 // Contact links
 const contactLinks = document.querySelectorAll('.to-contact');
+
+// Circular progress bars
+const skillWrapper = document.querySelectorAll('.skill-wrapper');
 
 /////////////////
 // D E F I N E //
@@ -104,12 +109,49 @@ const io = new IntersectionObserver(entries => {
 
 sections.forEach(section => io.observe(section));
 
+const circleWatch = new IntersectionObserver(entries => {
+	for (const entry of entries) {
+		if (entry.isIntersecting && entry.target.id === 'skills') {
+			drawCircles();
+		} else if (!entry.isIntersecting && entry.target.id === 'skills') {
+			// Remove all SVG child nodes from parents in 'Skills' section
+			skillWrapper.forEach(parent => {
+				parent.removeChild(parent.childNodes[2]);
+			});
+		} else {
+			return;
+		}
+	}
+}, options);
+
+sections.forEach(section => circleWatch.observe(section));
+
 // Calculate age
 const calculateAge = () => {
 	const today = new Date();
 	const diff = today - dob;
 	const age = Math.floor(diff / (365.25 * 24 * 60 * 60 * 1000));
 	return age;
+};
+
+// Circular progress bars
+const drawCircles = () => {
+	skillWrapper.forEach(skill => {
+		// Grab skill level from DOM dataset
+		let skillLevel = skill.dataset.skillLevel;
+
+		let circle = new ProgressBar.Circle(skill, {
+			easing: 'easeOut',
+			duration: 1400,
+			color: '#0afdd8',
+			trailColor: '#020214',
+			strokeWidth: 3,
+			svgStyle: {
+				height: '100%',
+			},
+		});
+		circle.animate(skillLevel);
+	});
 };
 
 /////////////////

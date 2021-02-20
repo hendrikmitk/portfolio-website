@@ -27,7 +27,7 @@ const ageSpan = document.querySelector('#age');
 const contactLinks = document.querySelectorAll('.to-contact');
 
 // Circular progress bars
-const skillWrapper = document.querySelectorAll('.skill-wrapper');
+const circleWrappers = document.querySelectorAll('.circle-wrapper');
 
 /////////////////
 // D E F I N E //
@@ -115,8 +115,8 @@ const circleWatch = new IntersectionObserver(entries => {
 			drawCircles();
 		} else if (!entry.isIntersecting && entry.target.id === 'skills') {
 			// Remove all SVG child nodes from parents in 'Skills' section
-			skillWrapper.forEach(parent => {
-				parent.removeChild(parent.childNodes[1]);
+			circleWrappers.forEach(circleWrapper => {
+				circleWrapper.innerHTML = '';
 			});
 		} else {
 			return;
@@ -136,7 +136,7 @@ const calculateAge = () => {
 
 // Circular progress bars
 const drawCircles = () => {
-	skillWrapper.forEach(skill => {
+	circleWrappers.forEach(skill => {
 		// Grab skill level from DOM dataset
 		let skillLevel = skill.dataset.skillLevel;
 

@@ -153,7 +153,7 @@ section {
 				transition-timing-function: ease-out;
 				animation: fadeInLogo 0.5s forwards;
 			}
-			&::before {
+			&::after {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -174,8 +174,15 @@ section {
 				// Maybe instead change color of logo?
 				animation: fadeOutLogo 0.4s forwards;
 			}
-			&:hover::before {
+			&:hover::after {
 				animation: fadeInText 0.4s forwards;
+			}
+			.circle-wrapper {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 		}
 	}

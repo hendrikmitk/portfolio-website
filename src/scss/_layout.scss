@@ -59,13 +59,21 @@ section {
 
 /* Category tags */
 
-.tag {
-	font-size: 1.4rem;
+.category {
 	font-weight: 300;
-	color: $mountain-haze;
-	text-align: center;
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+	color: $ice-ice-baby;
 	margin: 2.4rem auto;
 }
+
+// .tag {
+// 	font-size: 1.4rem;
+// 	font-weight: 300;
+// 	color: $mountain-haze;
+// 	text-align: center;
+// 	margin: 2.4rem auto;
+// }
 
 /* Hero section */
 
@@ -112,6 +120,9 @@ section {
 
 #about-wrapper {
 	flex-direction: column;
+	.category {
+		width: 100%;
+	}
 	#about-text {
 		font-weight: 300;
 		font-size: 1.6rem;
@@ -166,6 +177,7 @@ section {
 
 #contact-wrapper {
 	flex-direction: column;
+	padding-bottom: 4.6rem;
 	a {
 		position: relative;
 		font-weight: 300;

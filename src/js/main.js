@@ -19,8 +19,10 @@ const cursorSpan = document.querySelector('.cursor');
 // IntersectionObserver
 const sections = document.querySelectorAll('section');
 
-// Calculate age
+// Date calculations
+const today = new Date();
 const ageSpan = document.querySelector('#age');
+const yearSpan = document.querySelector('#year');
 
 // Contact links
 const contactLinks = document.querySelectorAll('.to-contact');
@@ -128,7 +130,6 @@ sections.forEach(section => circleWatch.observe(section));
 
 // Calculate age
 const calculateAge = () => {
-	const today = new Date();
 	const diff = today - dob;
 	const age = Math.floor(diff / (365.25 * 24 * 60 * 60 * 1000));
 	return age;
@@ -166,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Calculate age
 document.addEventListener('DOMContentLoaded', () => {
 	ageSpan.textContent = calculateAge();
+	yearSpan.textContent = today.getFullYear();
 });
 
 // Smooth scrolling

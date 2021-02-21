@@ -18,7 +18,6 @@ const cursorSpan = document.querySelector('.cursor');
 
 // IntersectionObserver
 const sections = document.querySelectorAll('section');
-const skillSection = document.getElementById('skills');
 
 // Calculate age
 const ageSpan = document.querySelector('#age');

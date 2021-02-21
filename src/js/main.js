@@ -38,6 +38,7 @@ const textArray = [
 	'CSS artist',
 	'passionate Kitesurfer',
 	'JavaScript lover',
+	'Crypto rascal',
 	'HTML tinkerer',
 	'Photography enthusiast',
 ];

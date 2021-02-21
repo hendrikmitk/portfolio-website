@@ -1,36 +1,3 @@
-/* Scroll snapping */
-
-.snap-wrapper {
-	height: 100vh;
-	width: 100%;
-	overflow-y: scroll;
-	scroll-snap-type: y mandatory;
-	.snap-box {
-		width: 100%;
-		scroll-snap-align: center;
-	}
-}
-
-/* Background */
-
-section {
-	height: 100vh;
-	width: 100%;
-	position: relative;
-	&:nth-of-type(odd) {
-		background: $hadopelagic-water;
-		.poly {
-			@include rectangle-top-left($benthic-black, 85%);
-		}
-	}
-	&:nth-of-type(even) {
-		background: $benthic-black;
-		.poly {
-			@include rectangle-top-right($hadopelagic-water, 85%);
-		}
-	}
-}
-
 /* Head shot image */
 
 #hero {

@@ -4,23 +4,31 @@
 	background: url(../img/head-shot.png), $hadopelagic-water;
 	background-attachment: fixed; // Or perhaps better 'scroll'?
 	background-position: right center;
-	background-size: 92% auto; // Decrease width for larger Screens
+	background-size: 88% auto;
 	background-repeat: no-repeat;
-	background-blend-mode: lighten;
+	background-blend-mode: luminosity;
+	@include for(desktop) {
+		background-position: 76% center;
+		background-size: 72% auto; // Decrease head shot image image size
+	}
 }
 
 /* Content wrapper */
 
 .content {
 	min-height: 100vh;
-	width: calc(100% - #{$global-margin} * 2);
+	width: calc(100% - #{$margin-laptop} * 2);
 	position: absolute;
 	top: 0;
-	margin: 0 $global-margin;
+	margin: 0 $margin-laptop;
 	padding-top: 7.2vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@include for(desktop) {
+		width: calc(100% - #{$margin-desktop} * 2);
+		margin: 0 $margin-desktop;
+	}
 }
 
 /* Category tags */

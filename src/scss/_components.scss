@@ -1,6 +1,15 @@
 /* Nav header */
 
 header {
+	// @include for(phone) {
+	// 	background-color: rgba(255, 0, 242, 0.2);
+	// }
+	// @include for(tablet) {
+	// 	background-color: rgba(128, 128, 0, 0.4);
+	// }
+	// @include for(desktop) {
+	// 	background-color: rgba(0, 247, 255, 0.4);
+	// }
 	height: 7.2vh;
 	min-height: 5.4rem;
 	width: 100%;
@@ -10,7 +19,10 @@ header {
 	position: fixed;
 	top: 0%;
 	z-index: 10;
-	padding: 0 $global-margin;
+	padding: 0 $margin-laptop;
+	@include for(desktop) {
+		padding: 0 $margin-desktop;
+	}
 	nav {
 		width: 100%;
 		display: flex;
@@ -95,10 +107,14 @@ section {
 footer {
 	height: 6.8vh;
 	min-height: 4.6rem;
-	width: calc(100% - #{$global-margin} * 2);
+	width: calc(100% - #{$margin-laptop} * 2);
 	position: absolute;
 	bottom: 0;
-	margin: 0 $global-margin;
+	margin: 0 $margin-laptop;
+	@include for(desktop) {
+		width: calc(100% - #{$margin-desktop} * 2);
+		margin: 0 $margin-desktop;
+	}
 	p {
 		font-weight: 300;
 		font-size: 1.4rem;

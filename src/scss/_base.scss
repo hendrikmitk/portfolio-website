@@ -1,3 +1,25 @@
+/* Media queries */
+
+@mixin for($size) {
+	@if $size == phone {
+		@media (max-width: 688px) {
+			@content;
+		}
+	} @else if $size == tablet {
+		@media (max-width: 1024px) and (min-width: 688px) {
+			@content;
+		}
+	} @else if $size == laptop {
+		@media (max-width: 1680px) and (min-width: 1024px) {
+			@content;
+		}
+	} @else if $size == desktop {
+		@media (min-width: 1680px) {
+			@content;
+		}
+	}
+}
+
 /* Color variables */
 
 $benthic-black: rgb(2, 2, 20);
@@ -8,7 +30,8 @@ $mountain-haze: rgb(107, 107, 128);
 
 /* Layout variables */
 
-$global-margin: 12%; // Increase to ~18% for larger Screens
+$margin-laptop: 12%;
+$margin-desktop: 16%;
 
 /* Global styling */
 

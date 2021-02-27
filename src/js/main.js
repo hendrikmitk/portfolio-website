@@ -8,6 +8,12 @@ import ProgressBar from 'progressbar.js';
 smoothscroll.polyfill();
 window.__forceSmoothScrollPolyfill__ = true;
 
+const hamburger = document.querySelector('.hamburger');
+hamburger.addEventListener('click', () => {
+	// console.log('Hamburger clicked 🍔');
+	hamburger.classList.toggle('is-active');
+});
+
 /////////////////
 // S E L E C T //
 /////////////////

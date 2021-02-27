@@ -1,21 +1,25 @@
+/* Hamburger menu */
+
+#hamburger-menu {
+	display: none;
+}
+
+.hamburger {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	visibility: hidden;
+	@include for(phone) {
+		visibility: visible;
+	}
+}
+
 /* Nav header */
 
 header {
-	// @include for(phone) {
-	// 	background-color: rgba(255, 0, 242, 0.2);
-	// }
-	// @include for(tablet) {
-	// 	background-color: rgba(128, 128, 0, 0.4);
-	// }
-	// @include for(desktop) {
-	// 	background-color: rgba(0, 247, 255, 0.4);
-	// }
 	height: 7.2vh;
 	min-height: 5.4rem;
 	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
 	position: fixed;
 	top: 0%;
 	z-index: 10;
@@ -24,26 +28,18 @@ header {
 		padding: 0 $margin-desktop;
 	}
 	nav {
+		height: 100%;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		#navbar-hero {
-			position: relative;
-			h1 {
-				font-size: 4.2rem;
-				line-height: 6.4rem;
+			@include for(phone) {
+				display: none;
 			}
-			#h-1 {
-				font-weight: 400;
-				color: $ice-ice-baby;
-			}
-			#h-2 {
-				color: $hadopelagic-water;
-				position: absolute;
-				font-weight: 600;
-				left: 0.5rem;
-				top: 0%;
+			height: 54%;
+			img {
+				height: 100%;
 			}
 		}
 		ul {
@@ -51,14 +47,12 @@ header {
 			justify-content: space-between;
 			align-items: center;
 			li {
-				list-style: none;
 				&:nth-of-type(even) {
 					margin: 0 6rem;
 				}
 				a {
 					font-weight: 300;
 					font-size: 1.4rem;
-					line-height: 2.1rem;
 					color: $white;
 					&:hover {
 						color: $ice-ice-baby;

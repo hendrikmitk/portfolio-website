@@ -44,6 +44,7 @@
 /* Hero section */
 
 #hero-wrapper {
+	padding-bottom: 7.6vh;
 	#hero-text {
 		width: 100%;
 		color: $white;
@@ -86,6 +87,7 @@
 
 #about-wrapper {
 	flex-direction: column;
+	padding-bottom: 14.8vh;
 	.category {
 		width: 100%;
 	}
@@ -95,6 +97,9 @@
 		line-height: 2.4rem;
 		color: $white;
 		columns: auto 2;
+		@include for(phone) {
+			columns: auto 1;
+		}
 		.to-contact {
 			position: relative;
 			color: $ice-ice-baby;
@@ -103,15 +108,27 @@
 	}
 }
 
+/* Skills section */
+
 #skills-wrapper {
 	flex-direction: column;
-	padding-bottom: 4.6rem;
+	padding-bottom: 14.8vh;
 	#skills-container {
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
 		grid-template-rows: repeat(2, 16vh);
 		grid-gap: 3.4rem;
+		@include for(tablet) {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(3, 14vh);
+			grid-gap: 3rem;
+		}
+		@include for(phone) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(4, 12vh);
+			grid-gap: 2.6rem;
+		}
 		.skill-wrapper {
 			// outline: 0.1rem dotted $mountain-haze;
 			display: flex;
@@ -122,6 +139,12 @@
 				color: $ice-ice-baby;
 				position: absolute;
 				font-size: 4.2rem;
+				@include for(tablet) {
+					font-size: 3.8rem;
+				}
+				@include for(phone) {
+					font-size: 3.4rem;
+				}
 				opacity: 1;
 				transition-property: animation;
 				transition-timing-function: ease-out;
@@ -177,12 +200,17 @@
 			p {
 				font-weight: 300;
 				font-size: 1rem;
-				line-height: 1.5rem;
 				color: $mountain-haze;
 				margin-right: 3.8rem;
+				@include for(phone) {
+					margin-right: 0.6rem;
+				}
 			}
 			img {
 				margin: 0 1rem;
+				@include for(phone) {
+					margin: 0 0.8rem;
+				}
 			}
 		}
 	}
@@ -192,6 +220,7 @@
 
 #follow-wrapper {
 	flex-direction: column;
+	padding-bottom: 14vh;
 	#social-container {
 		ul {
 			display: flex;
@@ -219,12 +248,15 @@
 
 #contact-wrapper {
 	flex-direction: column;
-	padding-bottom: 4.6rem;
+	padding-bottom: 14vh;
 	a {
 		position: relative;
 		font-weight: 300;
 		font-size: 4.2rem;
 		color: $white;
+		@include for(phone) {
+			font-size: 2.8rem;
+		}
 		@include underline-effect($ice-ice-baby, 0.4rem, 0.6rem, 0.3s);
 	}
 }

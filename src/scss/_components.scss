@@ -24,6 +24,9 @@ header {
 	top: 0%;
 	z-index: 10;
 	padding: 0 $margin-laptop;
+	@include for(phone) {
+		padding: 0 $margin-phone;
+	}
 	@include for(desktop) {
 		padding: 0 $margin-desktop;
 	}
@@ -109,6 +112,10 @@ footer {
 	position: absolute;
 	bottom: 0;
 	margin: 0 $margin-laptop;
+	@include for(phone) {
+		width: calc(100% - #{$margin-phone} * 2);
+		margin: 0 $margin-phone;
+	}
 	@include for(desktop) {
 		width: calc(100% - #{$margin-desktop} * 2);
 		margin: 0 $margin-desktop;

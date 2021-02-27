@@ -25,6 +25,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@include for(phone) {
+		width: calc(100% - #{$margin-phone} * 2);
+		margin: 0 $margin-phone;
+	}
 	@include for(desktop) {
 		width: calc(100% - #{$margin-desktop} * 2);
 		margin: 0 $margin-desktop;
@@ -90,6 +94,7 @@
 	padding-bottom: 14.8vh;
 	.category {
 		width: 100%;
+		text-align: center;
 	}
 	#about-text {
 		font-weight: 300;
@@ -196,7 +201,7 @@
 		display: flex;
 		.key {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			p {
 				font-weight: 300;
 				font-size: 1rem;
@@ -232,7 +237,9 @@
 				list-style: none;
 				font-weight: 400;
 				font-size: 4.2rem;
-				line-height: 6.2rem;
+				@include for(phone) {
+					font-size: 2.8rem;
+				}
 				a {
 					color: $white;
 					&:hover {

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Priority tags. These must come first. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Search engine robots Meta Tags. -->
+    <meta name="robots" content="none">
+    <!-- External Stylesheets. -->
+    <link rel="stylesheet" href="./scss/main.scss">
+    <link rel="stylesheet" href="./scss/hamburgers/hamburgers.scss">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap">
+    <!-- Favicon Meta Tags. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- External Scripts. -->
+    <script defer src="./js/main.js"></script>
+    <!-- Document Title -->
+    <title>Impressum | Hendrik Harlichs</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Nav header -->
+        <nav>
+            <a id="navbar-hero">
+                <img src="./img/logo.svg" data-target="hero" class="nav-scroll">
+            </a>
+            <ul>
+                <li id="navbar-about"><a data-target="about" class="nav-scroll">About</a></li>
+                <li id="navbar-skills"><a data-target="skills" class="nav-scroll">Skills</a></li>
+                <li id="navbar-follow"><a data-target="follow" class="nav-scroll">Follow me</a></li>
+                <li id="navbar-contact"><a data-target="contact" class="nav-scroll">Say hello</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburger menu -->
+        <input type="checkbox" id="hamburger-menu">
+        <label for="hamburger-menu">
+            <div class="hamburger hamburger--spin">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </div>
+        </label>
+    </header>
+
+    <main>
+        <section id="imprint">
+            <div class="poly"></div>
+            <div id="imprint-wrapper" class="content">
+                <div id="imprint-text">
+                    <h1>Impressum</h1>
+                    <p>Inhaltlich verantwortlich gemäß § 5 TMG:</br></br>Hendrik Harlichs</br>Friedensallee 13</br>22765 Hamburg</p>
+                    <h2>Kontakt</h2>
+                    <p>Telefon: <a href="tel:+4917624701764">+49 (0) 176 247 017 64</a></br>E-Mail: <a href="mailto:info@hendrikharlichs.de">info@hendrikharlichs.de</a></p>
+                    <h2>Haftungshinweis</h2>
+                    <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links.<br />Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.<br /><br />Note: This page is in German to conform with the imprint requirements of German law.</p>
+                </div>
+            </div>
+            <footer>
+                <p>© 2021 | Source on <a href="https://github.com/hendrikmitk/portfolio-website/" target="_blank">GitHub</a> | <a href="./imprint.html">Imprint</a></p>
+            </footer>
+        </section>
+    </main>
+
+</body>
+
+</html>

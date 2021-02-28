@@ -120,9 +120,14 @@ sections.forEach(section => io.observe(section));
 const circleWatch = new IntersectionObserver(entries => {
 	for (const entry of entries) {
 		if (entry.isIntersecting && entry.target.id === 'skills') {
+			// Clear-up SVG child nodes from parents
+			circleWrappers.forEach(circleWrapper => {
+				circleWrapper.innerHTML = '';
+			});
+			// Draw fresh SVG child nodes
 			drawCircles();
 		} else if (!entry.isIntersecting && entry.target.id === 'skills') {
-			// Remove all SVG child nodes from parents in 'Skills' section
+			// Remove all SVG child nodes when leaving section
 			circleWrappers.forEach(circleWrapper => {
 				circleWrapper.innerHTML = '';
 			});

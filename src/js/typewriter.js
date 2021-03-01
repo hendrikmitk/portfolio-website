@@ -10,17 +10,16 @@ const cursorSpan = document.querySelector('.cursor');
 /////////////////
 
 const textArray = [
-	'Node.js wizard',
 	'CSS artist',
+	'Node.js wizard',
 	'passionate Kitesurfer',
 	'JavaScript lover',
 	'Crypto rascal',
 	'HTML tinkerer',
-	'Photography enthusiast',
 ];
-const typingDelay = 100;
+const typingDelay = 80;
 const erasingDelay = 60;
-const newTextDelay = 1200; // Time the fully typed text is displayed
+const newTextDelay = 1000; // Time the fully typed text is displayed
 const initialOffset = 1400; // Offset before 1st start
 const newTextOffset = 400; // Offset before nth start
 let textArrayIndex = 0;

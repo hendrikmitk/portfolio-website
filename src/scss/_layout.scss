@@ -7,6 +7,13 @@
 	background-size: 88% auto;
 	background-repeat: no-repeat;
 	background-blend-mode: luminosity;
+	@include for(phone) {
+		background: url(../img/head-shot-mob.png), $hadopelagic-water;
+		background-attachment: fixed; // Or perhaps better 'scroll'?
+		background-position: center top;
+		background-size: 96% auto;
+		background-repeat: no-repeat;
+	}
 	@include for(desktop) {
 		background-position: 76% center;
 		background-size: 72% auto; // Decrease head shot image image size
@@ -22,11 +29,13 @@
 	top: 0;
 	margin: 0 $margin-laptop;
 	padding-top: 7.2vh;
+	padding-bottom: 14vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	@include for(phone) {
 		width: calc(100% - #{$margin-phone} * 2);
+		padding-bottom: 11.8vh;
 		margin: 0 $margin-phone;
 	}
 	@include for(desktop) {
@@ -48,20 +57,42 @@
 /* Hero section */
 
 #hero-wrapper {
-	padding-bottom: 7.6vh;
+	padding-bottom: 6.8rem;
+	@include for(phone) {
+		align-items: flex-end;
+	}
 	#hero-text {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
 		color: $white;
+		@include for(phone) {
+			height: 42vh;
+			max-height: 28rem;
+			justify-content: space-between;
+		}
 		h3 {
 			font-weight: 400;
 			font-size: 4.2rem;
 			line-height: 5.2rem;
 			margin-bottom: 3rem;
+			@include for(phone) {
+				font-weight: 300;
+				font-size: 3.8rem;
+				line-height: 4.8rem;
+				margin-bottom: 0rem;
+			}
 		}
 		h4 {
 			font-weight: 300;
 			font-size: 1.6rem;
 			line-height: 2.2rem;
+			@include for(phone) {
+				// margin-bottom: 1.6rem;
+				br {
+					display: none;
+				}
+			}
 		}
 		.to-contact {
 			position: relative;
@@ -71,6 +102,9 @@
 		/* Typing effect */
 		span.typed-text {
 			font-weight: 400;
+			@include for(phone) {
+				font-weight: 300;
+			}
 			color: $ice-ice-baby;
 		}
 		span.cursor {
@@ -91,7 +125,6 @@
 
 #about-wrapper {
 	flex-direction: column;
-	padding-bottom: 14.8vh;
 	.category {
 		width: 100%;
 		text-align: center;
@@ -117,7 +150,6 @@
 
 #skills-wrapper {
 	flex-direction: column;
-	padding-bottom: 14.8vh;
 	#skills-container {
 		width: 100%;
 		display: grid;
@@ -173,7 +205,6 @@
 
 			/* Show names on hover */
 			&:hover > .skill-logo {
-				// Maybe instead change color of logo?
 				animation: fadeOutLogo 0.4s forwards;
 			}
 			&:hover::after {
@@ -225,7 +256,6 @@
 
 #follow-wrapper {
 	flex-direction: column;
-	padding-bottom: 14vh;
 	#social-container {
 		ul {
 			display: flex;
@@ -255,7 +285,6 @@
 
 #contact-wrapper {
 	flex-direction: column;
-	padding-bottom: 14vh;
 	a {
 		position: relative;
 		font-weight: 300;
@@ -274,6 +303,9 @@
 	justify-content: flex-start;
 	align-items: center;
 	padding-bottom: 14vh;
+	@include for(phone) {
+		padding-bottom: 11.8vh;
+	}
 	#imprint-text {
 		h1 {
 			font-weight: 300;

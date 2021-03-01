@@ -24,6 +24,7 @@
 
 .content {
 	min-height: 100vh;
+	min-height: -webkit-fill-available; // WebKit 100vh bug fix
 	width: calc(100% - #{$margin-laptop} * 2);
 	position: absolute;
 	top: 0;

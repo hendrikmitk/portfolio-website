@@ -29,14 +29,13 @@
 	position: absolute;
 	top: 0;
 	margin: 0 $margin-laptop;
-	padding-top: 7.2vh;
-	padding-bottom: 14vh;
+	padding-bottom: 9.8vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	@include for(phone) {
 		width: calc(100% - #{$margin-phone} * 2);
-		padding-bottom: 11.8vh;
+		padding-bottom: 8.6vh;
 		margin: 0 $margin-phone;
 	}
 	@include for(desktop) {
@@ -131,18 +130,41 @@
 		text-align: center;
 	}
 	#about-text {
-		font-weight: 300;
-		font-size: 1.6rem;
-		line-height: 2.4rem;
-		color: $white;
-		columns: auto 2;
+		display: flex;
 		@include for(phone) {
-			columns: auto 1;
+			flex-direction: column;
+		}
+		p {
+			width: 50%;
+			@include for(tablet) {
+				padding-left: 1.2rem;
+				padding-right: 1.2rem;
+			}
+			@include for(laptop) {
+				padding-left: 1.2rem;
+				padding-right: 1.2rem;
+			}
+			@include for(desktop) {
+				padding-left: 2.8rem;
+				padding-right: 2.8rem;
+			}
+			@include for(phone) {
+				width: 100%;
+				padding-top: 1.2rem;
+				padding-bottom: 1.2rem;
+			}
+			font-weight: 300;
+			font-size: 1.6rem;
+			line-height: 2.5rem;
+			color: $white;
+		}
+		.hcs-link a {
+			color: $ice-ice-baby;
 		}
 		.to-contact {
 			position: relative;
 			color: $ice-ice-baby;
-			@include underline-effect($ice-ice-baby, 0.3rem, -0.4rem, 0.3s);
+			@include underline-effect($ice-ice-baby, 0.3rem, -0.1rem, 0.3s);
 		}
 	}
 }

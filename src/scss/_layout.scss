@@ -2,21 +2,21 @@
 
 #hero {
 	background: url(../img/head-shot.png), $hadopelagic-water;
-	background-attachment: fixed; // Or perhaps better 'scroll'?
+	background-attachment: fixed;
 	background-position: right center;
 	background-size: 88% auto;
 	background-repeat: no-repeat;
 	background-blend-mode: luminosity;
 	@include for(phone) {
 		background: url(../img/head-shot-mob.png), $hadopelagic-water;
-		background-attachment: fixed; // Or perhaps better 'scroll'?
+		background-attachment: scroll;
 		background-position: center top;
 		background-size: 96% auto;
 		background-repeat: no-repeat;
 	}
 	@include for(desktop) {
 		background-position: 76% center;
-		background-size: 72% auto; // Decrease head shot image image size
+		background-size: 72% auto;
 	}
 }
 

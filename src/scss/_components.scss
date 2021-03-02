@@ -1,9 +1,5 @@
 /* Hamburger menu */
 
-#hamburger-menu {
-	display: none;
-}
-
 .hamburger {
 	position: absolute;
 	top: 2rem;
@@ -11,6 +7,60 @@
 	visibility: hidden;
 	@include for(phone-only) {
 		visibility: visible;
+	}
+}
+
+/* Mobile menu */
+
+header {
+	nav {
+		@include for(phone-only) {
+			background-color: $ice-ice-baby;
+			height: 100vh;
+			position: fixed;
+			clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%); // Triangle cut-out
+			transform: translateY(-100%);
+			transition: all 0.2s ease-in-out;
+			ul {
+				width: 100%;
+				flex-direction: column;
+				li {
+					margin: 1.2vh 0;
+					opacity: 0;
+					a {
+						font-weight: 300;
+						font-size: 3.4rem;
+						color: $hadopelagic-water;
+						&:active {
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* Styling for expanded mobile menu */
+	.expanded {
+		@include for(phone-only) {
+			transform: translateY(0);
+			opacity: 0.98;
+			ul li:nth-child(1) {
+				transition: all 0.6s ease 0.1s;
+			}
+			ul li:nth-child(2) {
+				transition: all 0.6s ease 0.16s;
+			}
+			ul li:nth-child(3) {
+				transition: all 0.6s ease 0.22s;
+			}
+			ul li:nth-child(4) {
+				transition: all 0.6s ease 0.28s;
+			}
+			ul li.fade {
+				opacity: 1;
+			}
+		}
 	}
 }
 
@@ -25,7 +75,7 @@ header {
 	z-index: 10;
 	padding: 0 $margin-laptop;
 	@include for(phone-only) {
-		padding: 0 $margin-phone;
+		padding: 0 0;
 	}
 	@include for(desktop-and-up) {
 		padding: 0 $margin-desktop;
@@ -46,23 +96,24 @@ header {
 			}
 		}
 		ul {
-			@include for(phone-only) {
-				display: none;
-			}
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			li {
 				list-style: none;
-				&:nth-of-type(even) {
-					margin: 0 6rem;
+				@include for(tablet-and-up) {
+					&:nth-of-type(even) {
+						margin: 0 6rem;
+					}
 				}
 				a {
-					font-weight: 300;
-					font-size: 1.4rem;
-					color: $white;
-					&:hover {
-						color: $ice-ice-baby;
+					@include for(tablet-and-up) {
+						font-weight: 300;
+						font-size: 1.4rem;
+						color: $white;
+						&:hover {
+							color: $ice-ice-baby;
+						}
 					}
 				}
 			}

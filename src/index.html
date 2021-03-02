@@ -9,6 +9,8 @@
     <meta name="description" content="Web developer, loves to work with HTML, CSS/Sass, Javascript and Node.js, passionate about building websites, applications, and everything in between. Based in Hamburg, Germany.">
     <!-- Search engine robots Meta Tags. -->
     <meta name="robots" content="none">
+    <!-- Disable Google translate in Chrome -->
+    <meta name="google" content="notranslate">
     <!-- External Stylesheets. -->
     <link rel="stylesheet" href="./scss/main.scss">
     <link rel="stylesheet" href="./scss/hamburgers/hamburgers.scss">
@@ -41,15 +43,11 @@
                 <li id="navbar-contact"><a data-target="contact" class="nav-scroll">Say hello</a></li>
             </ul>
         </nav>
-        <!-- Hamburger menu -->
-        <input type="checkbox" id="hamburger-menu">
-        <label for="hamburger-menu">
-            <div class="hamburger hamburger--spin">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </div>
-        </label>
+        <div class="hamburger hamburger--spin">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </div>
     </header>
 
     <main class="snap-wrapper">

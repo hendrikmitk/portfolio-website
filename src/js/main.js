@@ -8,15 +8,14 @@ import ProgressBar from 'progressbar.js';
 smoothscroll.polyfill();
 window.__forceSmoothScrollPolyfill__ = true;
 
-const hamburger = document.querySelector('.hamburger');
-hamburger.addEventListener('click', () => {
-	// console.log('Hamburger clicked 🍔');
-	hamburger.classList.toggle('is-active');
-});
-
 /////////////////
 // S E L E C T //
 /////////////////
+
+// Mobile menu
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+const links = document.querySelectorAll('nav ul li');
 
 // IntersectionObserver
 const sections = document.querySelectorAll('section');
@@ -142,6 +141,26 @@ document.addEventListener('DOMContentLoaded', () => {
 	let hashName = hash.substring(1); // Remove hash sign
 	let navItem = document.getElementById(`navbar-${hashName}`);
 	navItem.classList.add('active');
+});
+
+// Toggle mobile menu on hamburger click
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('is-active');
+	nav.classList.toggle('expanded');
+	links.forEach(link => {
+		link.classList.toggle('fade');
+	});
+});
+
+// Untoggle mobile menu on link click
+links.forEach(link => {
+	link.addEventListener('click', () => {
+		hamburger.classList.toggle('is-active');
+		nav.classList.toggle('expanded');
+		links.forEach(link => {
+			link.classList.remove('fade');
+		});
+	});
 });
 
 // Handle Contact links

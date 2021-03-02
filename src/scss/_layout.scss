@@ -7,14 +7,14 @@
 	background-size: 88% auto;
 	background-repeat: no-repeat;
 	background-blend-mode: luminosity;
-	@include for(phone) {
+	@include for(phone-only) {
 		background: url(../img/head-shot-mob.png), $hadopelagic-water;
 		background-attachment: scroll;
 		background-position: center top;
 		background-size: 96% auto;
 		background-repeat: no-repeat;
 	}
-	@include for(desktop) {
+	@include for(desktop-and-up) {
 		background-position: 76% center;
 		background-size: 72% auto;
 	}
@@ -33,12 +33,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@include for(phone) {
+	@include for(phone-only) {
 		width: calc(100% - #{$margin-phone} * 2);
 		padding-bottom: 8.6vh;
 		margin: 0 $margin-phone;
 	}
-	@include for(desktop) {
+	@include for(desktop-and-up) {
 		width: calc(100% - #{$margin-desktop} * 2);
 		margin: 0 $margin-desktop;
 	}
@@ -58,7 +58,7 @@
 
 #hero-wrapper {
 	padding-bottom: 4.4rem;
-	@include for(phone) {
+	@include for(phone-only) {
 		align-items: flex-end;
 	}
 	#hero-text {
@@ -66,7 +66,7 @@
 		display: flex;
 		flex-direction: column;
 		color: $white;
-		@include for(phone) {
+		@include for(phone-only) {
 			height: 42vh;
 			max-height: 28rem;
 			justify-content: space-between;
@@ -76,7 +76,7 @@
 			font-size: 4.2rem;
 			line-height: 5.2rem;
 			margin-bottom: 3rem;
-			@include for(phone) {
+			@include for(phone-only) {
 				font-weight: 300;
 				font-size: 3.8rem;
 				line-height: 4.8rem;
@@ -87,8 +87,7 @@
 			font-weight: 300;
 			font-size: 1.6rem;
 			line-height: 2.2rem;
-			@include for(phone) {
-				// margin-bottom: 1.6rem;
+			@include for(phone-only) {
 				br {
 					display: none;
 				}
@@ -102,7 +101,7 @@
 		/* Typing effect */
 		span.typed-text {
 			font-weight: 400;
-			@include for(phone) {
+			@include for(phone-only) {
 				font-weight: 300;
 			}
 			color: $ice-ice-baby;
@@ -131,27 +130,23 @@
 	}
 	#about-text {
 		display: flex;
-		@include for(phone) {
+		@include for(phone-only) {
 			flex-direction: column;
 		}
 		p {
 			width: 50%;
-			@include for(tablet) {
-				padding-left: 1.2rem;
-				padding-right: 1.2rem;
-			}
-			@include for(laptop) {
-				padding-left: 1.2rem;
-				padding-right: 1.2rem;
-			}
-			@include for(desktop) {
-				padding-left: 2.8rem;
-				padding-right: 2.8rem;
-			}
-			@include for(phone) {
+			@include for(phone-only) {
 				width: 100%;
 				padding-top: 1.2rem;
 				padding-bottom: 1.2rem;
+			}
+			@include for(tablet-and-up) {
+				padding-left: 1.2rem;
+				padding-right: 1.2rem;
+			}
+			@include for(desktop-and-up) {
+				padding-left: 2.8rem;
+				padding-right: 2.8rem;
 			}
 			font-weight: 300;
 			font-size: 1.6rem;
@@ -179,15 +174,15 @@
 		grid-template-columns: repeat(6, 1fr);
 		grid-template-rows: repeat(2, 16vh);
 		grid-gap: 3.4rem;
-		@include for(tablet) {
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(3, 14vh);
-			grid-gap: 3rem;
-		}
-		@include for(phone) {
+		@include for(phone-only) {
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: repeat(4, 12vh);
 			grid-gap: 2.6rem;
+		}
+		@include for(tablet-only) {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(3, 14vh);
+			grid-gap: 3rem;
 		}
 		.skill-wrapper {
 			// outline: 0.1rem dotted $mountain-haze;
@@ -199,11 +194,11 @@
 				color: $ice-ice-baby;
 				position: absolute;
 				font-size: 4.2rem;
-				@include for(tablet) {
-					font-size: 3.8rem;
-				}
-				@include for(phone) {
+				@include for(phone-only) {
 					font-size: 3.4rem;
+				}
+				@include for(tablet-only) {
+					font-size: 3.8rem;
 				}
 				opacity: 1;
 				transition-property: animation;
@@ -261,13 +256,13 @@
 				font-size: 1rem;
 				color: $mountain-haze;
 				margin-right: 3.8rem;
-				@include for(phone) {
+				@include for(phone-only) {
 					margin-right: 0.6rem;
 				}
 			}
 			img {
 				margin: 0 1rem;
-				@include for(phone) {
+				@include for(phone-only) {
 					margin: 0 0.8rem;
 				}
 			}
@@ -290,7 +285,7 @@
 				list-style: none;
 				font-weight: 400;
 				font-size: 4.2rem;
-				@include for(phone) {
+				@include for(phone-only) {
 					font-size: 2.8rem;
 				}
 				a {
@@ -313,7 +308,7 @@
 		font-weight: 300;
 		font-size: 4.2rem;
 		color: $white;
-		@include for(phone) {
+		@include for(phone-only) {
 			font-size: 2.8rem;
 		}
 		@include underline-effect($ice-ice-baby, 0.4rem, 0.6rem, 0.3s);
@@ -326,7 +321,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	padding-bottom: 14vh;
-	@include for(phone) {
+	@include for(phone-only) {
 		padding-bottom: 11.8vh;
 	}
 	#imprint-text {

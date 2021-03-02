@@ -9,7 +9,7 @@
 	top: 2rem;
 	right: 2rem;
 	visibility: hidden;
-	@include for(phone) {
+	@include for(phone-only) {
 		visibility: visible;
 	}
 }
@@ -24,10 +24,10 @@ header {
 	top: 0%;
 	z-index: 10;
 	padding: 0 $margin-laptop;
-	@include for(phone) {
+	@include for(phone-only) {
 		padding: 0 $margin-phone;
 	}
-	@include for(desktop) {
+	@include for(desktop-and-up) {
 		padding: 0 $margin-desktop;
 	}
 	nav {
@@ -37,7 +37,7 @@ header {
 		justify-content: space-between;
 		align-items: center;
 		#navbar-hero {
-			@include for(phone) {
+			@include for(phone-only) {
 				display: none;
 			}
 			height: 54%;
@@ -46,7 +46,7 @@ header {
 			}
 		}
 		ul {
-			@include for(phone) {
+			@include for(phone-only) {
 				display: none;
 			}
 			display: flex;
@@ -112,11 +112,11 @@ footer {
 	position: absolute;
 	bottom: 0;
 	margin: 0 $margin-laptop;
-	@include for(phone) {
+	@include for(phone-only) {
 		width: calc(100% - #{$margin-phone} * 2);
 		margin: 0 $margin-phone;
 	}
-	@include for(desktop) {
+	@include for(desktop-and-up) {
 		width: calc(100% - #{$margin-desktop} * 2);
 		margin: 0 $margin-desktop;
 	}
@@ -124,7 +124,7 @@ footer {
 		font-weight: 300;
 		font-size: 1.4rem;
 		color: $mountain-haze;
-		@include for(phone) {
+		@include for(phone-only) {
 			font-size: 1rem;
 		}
 		a {

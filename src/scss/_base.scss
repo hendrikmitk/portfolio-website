@@ -1,19 +1,27 @@
 /* Media queries */
 
 @mixin for($size) {
-	@if $size == phone {
+	@if $size == phone-only {
 		@media (max-width: 688px) {
 			@content;
 		}
-	} @else if $size == tablet {
+	} @else if $size == tablet-only {
 		@media (max-width: 1024px) and (min-width: 688px) {
 			@content;
 		}
-	} @else if $size == laptop {
+	} @else if $size == tablet-and-up {
+		@media (min-width: 688px) {
+			@content;
+		}
+	} @else if $size == laptop-only {
 		@media (max-width: 1680px) and (min-width: 1024px) {
 			@content;
 		}
-	} @else if $size == desktop {
+	} @else if $size == laptop-and-up {
+		@media (min-width: 1024px) {
+			@content;
+		}
+	} @else if $size == desktop-and-up {
 		@media (min-width: 1680px) {
 			@content;
 		}

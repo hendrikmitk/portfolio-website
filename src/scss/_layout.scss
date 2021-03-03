@@ -320,10 +320,6 @@
 #imprint-wrapper {
 	justify-content: flex-start;
 	align-items: center;
-	padding-bottom: 14vh;
-	@include for(phone-only) {
-		padding-bottom: 11.8vh;
-	}
 	#imprint-text {
 		h1 {
 			font-weight: 300;

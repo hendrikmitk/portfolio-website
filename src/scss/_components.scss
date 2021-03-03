@@ -232,26 +232,28 @@ footer {
 
 /* Underline effect */
 
-nav ul {
-	li {
-		position: relative;
-		&::after {
-			content: '';
-			position: absolute;
-			height: 0.2rem;
-			width: 100%;
-			bottom: -0.2rem;
-			left: 0;
-			background-color: $ice-ice-baby;
-			visibility: hidden;
-			transform: scaleX(0);
-			transition: all 0.1s ease-in-out 0s;
+@include for(tablet-and-up) {
+	nav ul {
+		li {
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				height: 0.2rem;
+				width: 100%;
+				bottom: -0.2rem;
+				left: 0;
+				background-color: $ice-ice-baby;
+				visibility: hidden;
+				transform: scaleX(0);
+				transition: all 0.1s ease-in-out 0s;
+			}
 		}
-	}
-	.active {
-		&::after {
-			visibility: visible;
-			transform: scaleX(1);
+		.active {
+			&::after {
+				visibility: visible;
+				transform: scaleX(1);
+			}
 		}
 	}
 }

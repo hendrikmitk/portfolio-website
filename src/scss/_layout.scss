@@ -95,7 +95,9 @@
 		}
 		.to-contact {
 			position: relative;
-			@include underline-effect($ice-ice-baby, 0.3rem, -0.4rem, 0.3s);
+			@include for(tablet-and-up) {
+				@include underline-effect($ice-ice-baby, 0.3rem, -0.4rem, 0.3s);
+			}
 		}
 
 		/* Typing effect */
@@ -159,7 +161,9 @@
 		.to-contact {
 			position: relative;
 			color: $ice-ice-baby;
-			@include underline-effect($ice-ice-baby, 0.3rem, -0.1rem, 0.3s);
+			@include for(tablet-and-up) {
+				@include underline-effect($ice-ice-baby, 0.3rem, -0.1rem, 0.3s);
+			}
 		}
 	}
 }
@@ -311,7 +315,9 @@
 		@include for(phone-only) {
 			font-size: 2.8rem;
 		}
-		@include underline-effect($ice-ice-baby, 0.4rem, 0.6rem, 0.3s);
+		@include for(tablet-and-up) {
+			@include underline-effect($ice-ice-baby, 0.4rem, 0.6rem, 0.3s);
+		}
 	}
 }
 

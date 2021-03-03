@@ -98,7 +98,7 @@ const drawCircles = () => {
 		let circle = new ProgressBar.Circle(skill, {
 			easing: 'easeOut',
 			duration: 1400,
-			color: '#0afdd8',
+			color: '#0BD2B4',
 			trailColor: '#020214',
 			strokeWidth: 3,
 			svgStyle: {

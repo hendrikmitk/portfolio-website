@@ -18,12 +18,13 @@ header {
 			background-color: $ice-ice-baby;
 			height: 100vh;
 			position: fixed;
-			clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%); // Triangle cut-out
+			clip-path: polygon(0 0, 100% 0, 100% 75%, 0 85%);
 			transform: translateY(-100%);
 			transition: all 0.2s ease-in-out;
 			ul {
 				width: 100%;
 				flex-direction: column;
+				margin-bottom: 14.8rem;
 				li {
 					margin: 1.2vh 0;
 					opacity: 0;
@@ -40,24 +41,64 @@ header {
 		}
 	}
 
+	#mob-menu-fill {
+		@include for(phone-only) {
+			background-color: $hadopelagic-water;
+			min-height: 100vh;
+			width: 100%;
+			position: fixed;
+			clip-path: polygon(0 85%, 100% 75%, 100% 100%, 0% 100%);
+			transform: translateY(100%);
+			transition: all 0.2s ease-in-out;
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			padding-bottom: 5.2rem;
+			a {
+				font-weight: 300;
+				font-size: 1.4rem;
+				color: $mountain-haze;
+				opacity: 0;
+				&:active {
+					font-weight: 400;
+				}
+			}
+		}
+		@include for(tablet-and-up) {
+			display: none;
+		}
+	}
+
 	/* Styling for expanded mobile menu */
-	.expanded {
+	nav.expanded {
 		@include for(phone-only) {
 			transform: translateY(0);
-			opacity: 0.98;
+			// opacity: 0.98;
 			ul li:nth-child(1) {
-				transition: all 0.6s ease 0.1s;
+				transition: opacity 420ms ease-in 40ms;
 			}
 			ul li:nth-child(2) {
-				transition: all 0.6s ease 0.16s;
+				transition: opacity 420ms ease-in 80ms;
 			}
 			ul li:nth-child(3) {
-				transition: all 0.6s ease 0.22s;
+				transition: opacity 420ms ease-in 120ms;
 			}
 			ul li:nth-child(4) {
-				transition: all 0.6s ease 0.28s;
+				transition: opacity 420ms ease-in 160ms;
 			}
 			ul li.fade {
+				opacity: 1;
+			}
+		}
+	}
+	#mob-menu-fill.expanded {
+		@include for(phone-only) {
+			transform: translateY(0);
+			// opacity: 0.94;
+			a {
+				transition: opacity 300ms ease-in 80ms;
+			}
+			a.fade {
 				opacity: 1;
 			}
 		}

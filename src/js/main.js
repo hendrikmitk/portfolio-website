@@ -15,6 +15,8 @@ window.__forceSmoothScrollPolyfill__ = true;
 // Mobile menu
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
+const fill = document.getElementById('mob-menu-fill');
+const imprint = document.querySelector('#mob-menu-fill a');
 const links = document.querySelectorAll('nav ul li');
 
 // IntersectionObserver
@@ -147,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
 hamburger.addEventListener('click', () => {
 	hamburger.classList.toggle('is-active');
 	nav.classList.toggle('expanded');
+	fill.classList.toggle('expanded');
+	imprint.classList.toggle('fade');
 	links.forEach(link => {
 		link.classList.toggle('fade');
 	});
@@ -157,6 +161,8 @@ links.forEach(link => {
 	link.addEventListener('click', () => {
 		hamburger.classList.toggle('is-active');
 		nav.classList.toggle('expanded');
+		fill.classList.toggle('expanded');
+		imprint.classList.toggle('fade');
 		links.forEach(link => {
 			link.classList.remove('fade');
 		});

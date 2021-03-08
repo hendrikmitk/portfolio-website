@@ -45,6 +45,19 @@ const options = {
 let timeouts = {};
 const delay = 160;
 
+// Console signature
+const consoleBasic = 'font-size: 14px';
+const consoleStyleA =
+	'font-size: 14px;' +
+	'background-color: #0BD2B4;' +
+	'color: #020214;' +
+	'border-radius: 4px;' +
+	'padding-left: 4px;' +
+	'padding-right: 4px;' +
+	'text-align: center;';
+const consoleStyleB = 'font-size: 14px;' + 'color: #0BD2B4;';
+const signatureText = '%cHi fellow %ctech person%c 👋 Nice to %chave you%c here! 🧑‍💻';
+
 /////////////////
 // H E L P E R //
 /////////////////
@@ -114,6 +127,9 @@ const drawCircles = () => {
 /////////////////
 // L I S T E N //
 /////////////////
+
+// Console signature
+console.log(signatureText, consoleBasic, consoleStyleA, consoleBasic, consoleStyleB, consoleBasic);
 
 // Listen to the resize event and set --vh custom property
 window.addEventListener('resize', () => {

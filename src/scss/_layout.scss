@@ -29,13 +29,11 @@
 	position: absolute;
 	top: 0;
 	margin: 0 $margin-laptop;
-	padding-bottom: 9.8vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	@include for(phone-only) {
 		width: calc(100% - #{$margin-phone} * 2);
-		padding-bottom: 8.6vh;
 		margin: 0 $margin-phone;
 	}
 	@include for(desktop-and-up) {
@@ -49,17 +47,20 @@
 .category {
 	font-weight: 300;
 	font-size: 1.4rem;
-	line-height: 2.1rem;
+	line-height: 2rem;
 	color: $ice-ice-baby;
-	margin: 2.4rem auto;
+	margin-bottom: 2.4rem;
+	@include for(phone-only) {
+		margin-bottom: 1.2rem;
+	}
 }
 
 /* Hero section */
 
 #hero-wrapper {
-	padding-bottom: 4.4rem;
 	@include for(phone-only) {
 		align-items: flex-end;
+		padding-bottom: 3.2rem;
 	}
 	#hero-text {
 		width: 100%;
@@ -126,6 +127,10 @@
 
 #about-wrapper {
 	flex-direction: column;
+	padding-bottom: 4.4rem;
+	@include for(phone-only) {
+		padding-bottom: 3.2rem;
+	}
 	.category {
 		width: 100%;
 		text-align: center;
@@ -139,8 +144,6 @@
 			width: 50%;
 			@include for(phone-only) {
 				width: 100%;
-				padding-top: 1.2rem;
-				padding-bottom: 1.2rem;
 			}
 			@include for(tablet-and-up) {
 				padding-left: 1.2rem;
@@ -152,7 +155,6 @@
 			}
 			font-weight: 300;
 			font-size: 1.6rem;
-			line-height: 2.5rem;
 			color: $white;
 		}
 		.hcs-link a {
@@ -172,6 +174,10 @@
 
 #skills-wrapper {
 	flex-direction: column;
+	padding-bottom: 4.4rem;
+	@include for(phone-only) {
+		padding-bottom: 3.2rem;
+	}
 	#skills-container {
 		width: 100%;
 		display: grid;
@@ -189,7 +195,6 @@
 			grid-gap: 3rem;
 		}
 		.skill-wrapper {
-			// outline: 0.1rem dotted $mountain-haze;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -218,7 +223,7 @@
 				position: absolute;
 				font-weight: 300;
 				font-size: 1.4rem;
-				line-height: 2.1rem;
+				line-height: 2rem;
 				opacity: 0;
 				transition-property: animation;
 				transition-timing-function: ease-out;
@@ -278,6 +283,10 @@
 
 #follow-wrapper {
 	flex-direction: column;
+	padding-bottom: 4.4rem;
+	@include for(phone-only) {
+		padding-bottom: 3.2rem;
+	}
 	#social-container {
 		ul {
 			display: flex;
@@ -307,6 +316,10 @@
 
 #contact-wrapper {
 	flex-direction: column;
+	padding-bottom: 4.4rem;
+	@include for(phone-only) {
+		padding-bottom: 3.2rem;
+	}
 	a {
 		position: relative;
 		font-weight: 300;

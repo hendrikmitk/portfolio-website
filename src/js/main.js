@@ -40,7 +40,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // IntersectionObserver
 const options = {
-	rootMargin: '-40%',
+	rootMargin: '-40%'
 };
 let timeouts = {};
 const delay = 160;
@@ -102,8 +102,8 @@ const drawCircles = () => {
 			trailColor: '#020214',
 			strokeWidth: 3,
 			svgStyle: {
-				height: '100%',
-			},
+				height: '100%'
+			}
 		});
 		circle.animate(skillLevel);
 	});
@@ -134,10 +134,16 @@ document.addEventListener('click', event => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+	// Return when there is no #hash
+	if (!window.location.hash) {
+		return;
+	}
+
 	// Draw SVG child nodes when Skills are loaded
 	if (window.location.hash == '#skills') {
 		drawCircles();
 	}
+
 	// Add .active class to nav item when page is loaded
 	let hash = window.location.hash;
 	let hashName = hash.substring(1); // Remove hash sign

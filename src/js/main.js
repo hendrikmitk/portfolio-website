@@ -124,15 +124,17 @@ window.addEventListener('resize', () => {
 // Handle navigation clicks (Smooth scrolling)
 document.addEventListener('click', event => {
 	if (!event.target.matches('.nav-scroll')) return;
+	event.preventDefault();
 
 	// Handle navigation clicks on `/imprint.html`
 	if (window.location.pathname == '/imprint.html') {
 		location.href = `/#${event.target.dataset.target}`;
 	}
 
-	event.preventDefault();
-	let element = document.getElementById(event.target.dataset.target);
-	element.scrollIntoView({ behavior: 'smooth' });
+	if (window.location.pathname !== '/imprint.html') {
+		let element = document.getElementById(event.target.dataset.target);
+		element.scrollIntoView({ behavior: 'smooth' });
+	}
 });
 
 document.addEventListener('DOMContentLoaded', () => {

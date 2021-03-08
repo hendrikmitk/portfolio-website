@@ -50,22 +50,24 @@ const delay = 160;
 /////////////////
 
 // IntersectionObserver
-const io = new IntersectionObserver(entries => {
-	for (const entry of entries) {
-		let navItem = document.getElementById(`navbar-${entry.target.id}`);
-		if (entry.isIntersecting) {
-			timeouts[entry.target.id] = setTimeout(() => {
-				navItem.classList.add('active'); // Add .active class to nav item
-			}, delay);
-		} else {
-			clearTimeout(timeouts[entry.target.id]);
-			navItem.classList.remove('active'); // Remove .active from nav item
-			return;
+if (window.location.pathname !== '/imprint.html') {
+	const io = new IntersectionObserver(entries => {
+		for (const entry of entries) {
+			let navItem = document.getElementById(`navbar-${entry.target.id}`);
+			if (entry.isIntersecting) {
+				timeouts[entry.target.id] = setTimeout(() => {
+					navItem.classList.add('active'); // Add .active class to nav item
+				}, delay);
+			} else {
+				clearTimeout(timeouts[entry.target.id]);
+				navItem.classList.remove('active'); // Remove .active from nav item
+				return;
+			}
 		}
-	}
-}, options);
+	}, options);
 
-sections.forEach(section => io.observe(section));
+	sections.forEach(section => io.observe(section));
+}
 
 const circleWatch = new IntersectionObserver(entries => {
 	for (const entry of entries) {

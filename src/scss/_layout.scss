@@ -204,6 +204,18 @@
 				color: $ice-ice-baby;
 				position: absolute;
 				font-size: 4.2rem;
+				img {
+					height: 4.2rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					@include for(phone-only) {
+						height: 3.4rem;
+					}
+					@include for(tablet-only) {
+						height: 3.8rem;
+					}
+				}
 				@include for(phone-only) {
 					font-size: 3.4rem;
 				}
@@ -224,6 +236,9 @@
 				position: absolute;
 				font-weight: 300;
 				font-size: 1.4rem;
+				@include for(phone-only) {
+					font-size: 1rem;
+				}
 				line-height: 2rem;
 				opacity: 0;
 				transition-property: animation;

@@ -68,7 +68,7 @@
 		flex-direction: column;
 		color: $white;
 		@include for(phone-only) {
-			height: 42vh;
+			height: 38vh;
 			max-height: 28rem;
 			justify-content: space-between;
 		}
@@ -89,6 +89,7 @@
 			font-size: 1.6rem;
 			line-height: 2.2rem;
 			@include for(phone-only) {
+				font-size: 1.4rem;
 				br {
 					display: none;
 				}
@@ -147,12 +148,12 @@
 				font-size: 1.4rem;
 			}
 			@include for(tablet-and-up) {
-				padding-left: 1.2rem;
-				padding-right: 1.2rem;
-			}
-			@include for(desktop-and-up) {
-				padding-left: 2.8rem;
-				padding-right: 2.8rem;
+				&:nth-of-type(odd) {
+					padding-right: 2.4rem;
+				}
+				&:nth-of-type(even) {
+					padding-left: 2.4rem;
+				}
 			}
 			font-weight: 300;
 			font-size: 1.6rem;
@@ -338,7 +339,7 @@
 	}
 	a {
 		position: relative;
-		font-weight: 300;
+		font-weight: 400;
 		font-size: 4.2rem;
 		color: $white;
 		@include for(phone-only) {
@@ -361,6 +362,9 @@
 			font-size: 4.2rem;
 			color: $ice-ice-baby;
 			margin-bottom: 2.8rem;
+			@include for(phone-only) {
+				margin-bottom: 2rem;
+			}
 		}
 		h2 {
 			font-weight: 300;
@@ -368,6 +372,10 @@
 			color: $ice-ice-baby;
 			margin-top: 2.8rem;
 			margin-bottom: 2rem;
+			@include for(phone-only) {
+				margin-top: 2rem;
+				margin-bottom: 1.2rem;
+			}
 		}
 		p {
 			font-weight: 300;

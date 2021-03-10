@@ -15,7 +15,7 @@ const textArray = [
 	'passionate Kitesurfer',
 	'JavaScript lover',
 	'Crypto rascal',
-	'HTML tinkerer',
+	'HTML tinkerer'
 ];
 const typingDelay = 80;
 const erasingDelay = 60;

@@ -257,3 +257,10 @@ footer {
 		}
 	}
 }
+
+/* Hide elements */
+
+.hidden {
+	display: none;
+	pointer-events: none;
+}

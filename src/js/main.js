@@ -162,12 +162,20 @@ document.addEventListener('click', event => {
 	}
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-	// Calculate and display current age
-	document.querySelector('#age').innerHTML = calculateAge(new Date('03/19/1988'));
-
+window.addEventListener('load', () => {
 	// Show current year in footer
 	document.querySelector('.copyright-year').innerHTML = new Date().getFullYear();
+	document.querySelector('footer p').classList.remove('hidden');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	// Calculate and display current age
+	if (window.location.pathname !== '/imprint.html') {
+		document.getElementById('age').innerHTML = calculateAge(new Date('03/19/1988'));
+		document.querySelectorAll('#about-text p').forEach(paragraph => {
+			paragraph.classList.remove('hidden');
+		});
+	}
 
 	// Return when there is no #hash
 	if (!window.location.hash) {

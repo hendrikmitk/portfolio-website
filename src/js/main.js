@@ -62,6 +62,15 @@ const signatureText = '%cHi fellow %ctech person%c 👋 Nice to %chave you%c her
 // H E L P E R //
 /////////////////
 
+// Calculate age
+const calculateAge = dob => {
+	let month_diff = Date.now() - dob.getTime();
+	let age_dt = new Date(month_diff);
+	let year = age_dt.getUTCFullYear();
+	let age = Math.abs(year - 1970);
+	return age;
+};
+
 // IntersectionObserver
 if (window.location.pathname !== '/imprint.html') {
 	const io = new IntersectionObserver(entries => {
@@ -154,6 +163,9 @@ document.addEventListener('click', event => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+	// Calculate and display current age
+	document.querySelector('#age').innerHTML = calculateAge(new Date('03/19/1988'));
+
 	// Show current year in footer
 	document.querySelector('.copyright-year').innerHTML = new Date().getFullYear();
 

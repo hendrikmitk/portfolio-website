@@ -154,6 +154,9 @@ document.addEventListener('click', event => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+	// Show current year in footer
+	document.querySelector('.copyright-year').innerHTML = new Date().getFullYear();
+
 	// Return when there is no #hash
 	if (!window.location.hash) {
 		return;

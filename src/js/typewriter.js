@@ -14,7 +14,9 @@ const textArray = [
 	'Node.js wizard',
 	'passionate Kitesurfer',
 	'JavaScript lover',
+	'Vue.js bricklayer',
 	'Crypto rascal',
+	'React novelist',
 	'HTML tinkerer'
 ];
 const typingDelay = 80;

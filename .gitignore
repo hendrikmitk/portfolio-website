@@ -8,7 +8,7 @@ node_modules
 
 # .prettierignore and .cache
 .prettierignore
-.cache
+.parcel-cache
 
 # dotenv file
 .env

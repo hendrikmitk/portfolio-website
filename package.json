@@ -2,10 +2,9 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "description": "This is the code of my portfolio website. It's hand-made with ❤️ using [Sass](https://parceljs.org/) and [Parcel](https://parceljs.org/).",
-  "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html --no-source-maps --open --out-dir dist/dev",
-    "build": "parcel build --no-source-maps src/index.html --out-dir dist"
+    "dev": "parcel src/index.html --no-source-maps --open --dist-dir dist",
+    "build": "parcel build src/index.html --no-source-maps --dist-dir dist"
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,9 @@
     "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "@parcel/packager-raw-url": "^2.0.1",
+    "@parcel/transformer-sass": "^2.0.1",
+    "@parcel/transformer-webmanifest": "^2.0.1",
+    "parcel": "^2.0.1"
   }
 }

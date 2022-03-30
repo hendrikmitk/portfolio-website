@@ -77,7 +77,7 @@ html {
 	font-style: normal;
 	font-family: 'Prompt', sans-serif;
 	@include for(laptop-and-up) {
-		cursor: url('../img/cursor-outline.png'), auto;
+		cursor: url('../assets/img/cursor-outline.png'), auto;
 	}
 	* {
 		margin: 0;
@@ -90,7 +90,7 @@ html {
 			text-decoration: none;
 			outline: none;
 			@include for(laptop-and-up) {
-				cursor: url('../img/cursor-outline.png'), auto;
+				cursor: url('../assets/img/cursor-outline.png'), auto;
 			}
 		}
 		button,

@@ -1,14 +1,14 @@
 /* Head shot image */
 
 #hero {
-	background: url(../img/head-shot.png), $hadopelagic-water;
+	background: url(../assets/img/head-shot.png), $hadopelagic-water;
 	background-attachment: fixed;
 	background-position: right center;
 	background-size: 88% auto;
 	background-repeat: no-repeat;
 	background-blend-mode: luminosity;
 	@include for(phone-only) {
-		background: url(../img/head-shot-mob.png), $hadopelagic-water;
+		background: url(../assets/img/head-shot-mob.png), $hadopelagic-water;
 		background-attachment: scroll;
 		background-position: center top;
 		background-size: 96% auto;

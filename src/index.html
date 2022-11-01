@@ -36,25 +36,7 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a id="navbar-hero">
-                <img src="./assets/img/logo.svg" data-target="hero" class="nav-scroll" alt="Logo">
-            </a>
-            <ul>
-                <li id="navbar-about"><a data-target="about" class="nav-scroll">About</a></li>
-                <li id="navbar-skills"><a data-target="skills" class="nav-scroll">Skills</a></li>
-                <li id="navbar-follow"><a data-target="follow" class="nav-scroll">Follow me</a></li>
-                <li id="navbar-contact"><a data-target="contact" class="nav-scroll">Say hello</a></li>
-            </ul>
-        </nav>
-        <div id="mob-menu-fill"><a href="./imprint.html">Imprint</a></div>
-        <div class="hamburger hamburger--spin">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </div>
-    </header>
+    <include src="src/partials/header.html"></include>
 
     <main class="snap-wrapper">
         <section id="hero" class="snap-box">
@@ -167,9 +149,7 @@
                 <p class="category">Say hello</p>
                 <a href="mailto:hi@hendrikharlichs.de">hi@hendrikharlichs.de</a>
             </div>
-            <footer>
-                <p class="hidden">© <span class="copyright-year"></span> | Source on <a href="https://github.com/hendrikmitk/portfolio-website/">GitHub</a> | <a href="./imprint.html">Imprint</a></p>
-            </footer>
+            <include src="src/partials/footer.html"></include>
         </section>
     </main>
 
